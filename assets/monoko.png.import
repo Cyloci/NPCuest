@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/4 BigSet.png-c4161024e27e15287c8d790940e70466.stex"
+path="res://.import/monoko.png-50458292459e797bbab689ad63d45021.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/4 BigSet.png"
-dest_files=[ "res://.import/4 BigSet.png-c4161024e27e15287c8d790940e70466.stex" ]
+source_file="res://assets/monoko.png"
+dest_files=[ "res://.import/monoko.png-50458292459e797bbab689ad63d45021.stex" ]
 
 [params]
 

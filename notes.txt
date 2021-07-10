@@ -1,0 +1,20 @@
+Rooms
+=====
+
+Kitchen/Brewery
+  - Chopping block, with knife x
+  - Sink x
+  - Fridge x
+  - Stove x
+  - Barrels x
+Potions Station
+  - Cauldron on big fire x
+  - Table with beakers x
+Tailor Station
+  - Manequin x
+  - Loom 
+  - Stool x
+Smithing Station
+  - Furnace ~
+  - Anvil x
+  - Bucket x

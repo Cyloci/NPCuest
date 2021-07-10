@@ -188,8 +188,8 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CapsuleShape2D" id=9]
-radius = 6.03021
-height = 0.0
+radius = 6.52246
+height = 0.762963
 
 [sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Idle Left"
@@ -212,7 +212,6 @@ blend_point_2/node = SubResource( 12 )
 blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 13 )
 blend_point_3/pos = Vector2( 0, 1 )
-blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=15]
 animation = "Walk Down"
@@ -230,11 +229,12 @@ animation = "Walk Right"
 blend_point_0/node = SubResource( 15 )
 blend_point_0/pos = Vector2( 0, 1 )
 blend_point_1/node = SubResource( 16 )
-blend_point_1/pos = Vector2( -1, 0 )
+blend_point_1/pos = Vector2( -0.5, 0 )
 blend_point_2/node = SubResource( 17 )
 blend_point_2/pos = Vector2( 0, -1 )
 blend_point_3/node = SubResource( 18 )
-blend_point_3/pos = Vector2( 1, 0 )
+blend_point_3/pos = Vector2( 0.5, 0 )
+blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
 
@@ -258,11 +258,11 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="monoko" type="Sprite" parent="."]
-scale = Vector2( 0.71875, 0.71875 )
+scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
-flip_h = true
 hframes = 6
 vframes = 10
+frame = 16
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 "anims/Idle Down" = SubResource( 1 )
@@ -275,12 +275,13 @@ vframes = 10
 "anims/Walk Up" = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.0451206, 5.43598 )
+position = Vector2( 0, 5.63486 )
 shape = SubResource( 9 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 22 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 23 )
-parameters/Idle/blend_position = Vector2( -0.00170356, 0.431035 )
-parameters/Walk/blend_position = Vector2( -0.277683, 0.172414 )
+parameters/Idle/blend_position = Vector2( 0.127692, -0.812672 )
+parameters/Walk/blend_position = Vector2( 0.761165, 0.202505 )

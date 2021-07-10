@@ -1,22 +1,14 @@
 extends KinematicBody2D
 
 
-export var ACCELERATION = 500
-export var MAX_SPEED = 80
-export var ROLL_SPEED = 120
-export var FRICTION = 500
-
-enum {
-	MOVE,
-	ROLL,
-	ATTACK
-}
-
-var velocity = Vector2.ZERO
+export var ACCELERATION = 800
+export var MAX_SPEED = 60
+export var FRICTION = 800
 
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 
+var velocity = Vector2.ZERO
 
 func _ready():
 	animationTree.active = true

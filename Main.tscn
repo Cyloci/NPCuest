@@ -1421,10 +1421,6 @@ position = Vector2( -1, 0 )
 texture = ExtResource( 13 )
 vframes = 2
 
-[node name="furnace-top" type="Sprite" parent="Furnace"]
-position = Vector2( -1, -24 )
-texture = ExtResource( 5 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Furnace"]
 shape = SubResource( 79 )
 
@@ -1483,3 +1479,7 @@ shape = SubResource( 78 )
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
 position = Vector2( 72, 168 )
+
+[node name="furnace-top" type="Sprite" parent="."]
+position = Vector2( 295, 141 )
+texture = ExtResource( 5 )

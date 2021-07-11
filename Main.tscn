@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://assets/spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://assets/entities/stove.png" type="Texture" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/entities/round-door.png" type="Texture" id=16]
 [ext_resource path="res://assets/entities/square-door.png" type="Texture" id=17]
+[ext_resource path="res://assets/fire.png" type="Texture" id=18]
+[ext_resource path="res://assets/entities/counter.png" type="Texture" id=19]
 
 [sub_resource type="TileSet" id=1]
 0/name = "spritesheet.png 0"
@@ -1251,8 +1253,35 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="RectangleShape2D" id=78]
 extents = Vector2( 8, 8 )
 
+[sub_resource type="AtlasTexture" id=81]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 18 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 18 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 18 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=80]
+animations = [ {
+"frames": [ SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
 [sub_resource type="RectangleShape2D" id=79]
 extents = Vector2( 16, 8 )
+
+[sub_resource type="RectangleShape2D" id=85]
+extents = Vector2( 10, 5.46869 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -1268,7 +1297,7 @@ tile_set = SubResource( 41 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 0, 3, 0, 1, 3, 1, 2, 3, 65542, 3, 3, 1, 4, 3, 1, 5, 3, 65542, 6, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 65540, 10, 3, 1, 11, 3, 1, 12, 3, 1, 13, 3, 65542, 14, 3, 1, 15, 6, 0, 16, 3, 1, 17, 3, 65542, 18, 3, 1, 19, 3, 1, 20, 3, 2, 65536, 3, 65539, 65545, 3, 131075, 65556, 3, 65538, 131072, 3, 65538, 131092, 3, 65538, 196608, 3, 65538, 196617, 3, 3, 196628, 3, 65536, 262144, 3, 65539, 262153, 3, 131075, 262154, 3, 1, 262155, 3, 1, 262156, 3, 1, 262157, 3, 6, 262164, 3, 65536, 327680, 3, 65539, 327700, 3, 65538, 393216, 3, 131076, 393217, 3, 6, 393218, 11, 65537, 393219, 11, 65537, 393220, 11, 131073, 393236, 3, 65539, 458752, 3, 65538, 458772, 3, 65539, 524288, 3, 65538, 524292, 11, 65536, 524308, 3, 65536, 589824, 3, 131076, 589825, 3, 6, 589826, 11, 65537, 589827, 11, 65537, 589828, 11, 131075, 589841, 3, 4, 589842, 3, 1, 589843, 3, 1, 589844, 3, 131078, 655360, 3, 65536, 655366, 3, 3, 655368, 3, 3, 655380, 3, 65536, 720896, 3, 65536, 720897, 10, 2, 720898, 10, 3, 720899, 10, 4, 720900, 4, 0, 720901, 10, 0, 720902, 3, 131075, 720904, 3, 65539, 720916, 3, 65536, 786432, 3, 65539, 786440, 3, 65536, 786452, 3, 65539, 851968, 3, 65539, 851976, 3, 131076, 851977, 3, 1, 851978, 3, 1, 851979, 3, 65542, 851980, 3, 1, 851981, 3, 1, 851982, 3, 65542, 851983, 3, 1, 851984, 3, 1, 851985, 3, 65542, 851986, 3, 1, 851987, 3, 1, 851988, 3, 131074, 917504, 3, 65538, 917512, 3, 65539, 983040, 3, 65536, 983048, 3, 65536, 1048576, 3, 65538, 1048584, 3, 65538, 1114112, 3, 131072, 1114113, 3, 1, 1114114, 3, 65542, 1114115, 3, 6, 1114117, 3, 4, 1114118, 3, 65542, 1114119, 3, 1, 1114120, 3, 131074 )
+tile_data = PoolIntArray( 0, 3, 0, 1, 3, 1, 2, 3, 65542, 3, 3, 1, 4, 3, 1, 5, 3, 65542, 6, 3, 1, 7, 3, 1, 8, 3, 1, 9, 3, 65540, 10, 3, 1, 11, 3, 1, 12, 3, 1, 13, 3, 65542, 14, 3, 1, 15, 6, 0, 16, 3, 1, 17, 3, 65542, 18, 3, 1, 19, 3, 1, 20, 3, 2, 65536, 3, 65539, 65545, 3, 131075, 65556, 3, 65538, 131072, 3, 65538, 131092, 3, 65538, 196608, 3, 65538, 196617, 3, 3, 196628, 3, 65536, 262144, 3, 65539, 262153, 3, 131075, 262154, 3, 1, 262155, 3, 1, 262156, 3, 1, 262157, 3, 6, 262164, 3, 65536, 327680, 3, 65539, 327700, 3, 65538, 393216, 3, 131076, 393217, 3, 6, 393218, 11, 65537, 393219, 11, 65537, 393220, 11, 131073, 393236, 3, 65539, 458752, 3, 65538, 458772, 3, 65539, 524288, 3, 65538, 524292, 11, 65536, 524308, 3, 65536, 589824, 3, 131076, 589825, 3, 6, 589826, 11, 65537, 589827, 11, 65537, 589828, 11, 131075, 589841, 3, 4, 589842, 3, 1, 589843, 3, 1, 589844, 3, 131078, 655360, 3, 65536, 655366, 3, 3, 655368, 3, 3, 655380, 3, 65536, 720896, 3, 65536, 720897, 10, 2, 720898, 10, 3, 720899, 10, 4, 720901, 10, 0, 720902, 3, 131075, 720904, 3, 65539, 720916, 3, 65536, 786432, 3, 65539, 786440, 3, 65536, 786452, 3, 65539, 851968, 3, 65539, 851976, 3, 131076, 851977, 3, 1, 851978, 3, 1, 851979, 3, 65542, 851980, 3, 1, 851981, 3, 1, 851982, 3, 65542, 851983, 3, 1, 851984, 3, 1, 851985, 3, 65542, 851986, 3, 1, 851987, 3, 1, 851988, 3, 131074, 917504, 3, 65538, 917512, 3, 65539, 983040, 3, 65536, 983048, 3, 65536, 1048576, 3, 65538, 1048584, 3, 65538, 1114112, 3, 131072, 1114113, 3, 1, 1114114, 3, 65542, 1114115, 3, 6, 1114117, 3, 4, 1114118, 3, 65542, 1114119, 3, 1, 1114120, 3, 131074 )
 
 [node name="Objects" type="TileMap" parent="."]
 tile_set = SubResource( 76 )
@@ -1308,6 +1337,22 @@ position = Vector2( 120, 24 )
 
 [node name="stove" type="Sprite" parent="Stove2"]
 texture = ExtResource( 2 )
+hframes = 2
+frame = 1
+
+[node name="Fire" type="AnimatedSprite" parent="Stove2"]
+position = Vector2( -3.5, -5 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 80 )
+frame = 1
+playing = true
+
+[node name="Fire2" type="AnimatedSprite" parent="Stove2"]
+position = Vector2( 3.5, -5 )
+scale = Vector2( 0.5, 0.5 )
+frames = SubResource( 80 )
+frame = 2
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stove2"]
 shape = SubResource( 78 )
@@ -1324,10 +1369,28 @@ shape = SubResource( 78 )
 [node name="Potion cauldron" type="StaticBody2D" parent="."]
 position = Vector2( 24, 120 )
 
+[node name="Fire" type="AnimatedSprite" parent="Potion cauldron"]
+position = Vector2( 5, 3 )
+frames = SubResource( 80 )
+frame = 3
+playing = true
+
+[node name="Fire2" type="AnimatedSprite" parent="Potion cauldron"]
+position = Vector2( -5, 3 )
+frames = SubResource( 80 )
+frame = 3
+playing = true
+
 [node name="cauldron" type="Sprite" parent="Potion cauldron"]
 texture = ExtResource( 10 )
 hframes = 3
-frame = 1
+frame = 2
+
+[node name="Fire3" type="AnimatedSprite" parent="Potion cauldron"]
+position = Vector2( 0, 5 )
+frames = SubResource( 80 )
+frame = 3
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Potion cauldron"]
 shape = SubResource( 78 )
@@ -1420,6 +1483,13 @@ position = Vector2( 296, 165 )
 position = Vector2( -1, 0 )
 texture = ExtResource( 13 )
 vframes = 2
+frame = 1
+
+[node name="Fire" type="AnimatedSprite" parent="Furnace"]
+position = Vector2( 0, -2 )
+frames = SubResource( 80 )
+frame = 3
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Furnace"]
 shape = SubResource( 79 )
@@ -1476,6 +1546,17 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Back room door"]
 shape = SubResource( 78 )
+
+[node name="Counter" type="StaticBody2D" parent="."]
+position = Vector2( 72, 184 )
+
+[node name="counter" type="Sprite" parent="Counter"]
+texture = ExtResource( 19 )
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Counter"]
+position = Vector2( 0, 2.5 )
+shape = SubResource( 85 )
 
 [node name="Player" parent="." instance=ExtResource( 15 )]
 position = Vector2( 72, 168 )
